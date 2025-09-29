@@ -1,23 +1,39 @@
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
-    const allowedOrigin = "https://www.aadityashah.com";
+    const selfOrigin = url.origin;
+    const allowedOrigins = ["https://www.aadityashah.com", "https://aadityashah.com"]; // allowed external sites
+    const primaryRedirect = "https://www.aadityashah.com";
     const referer = request.headers.get("Referer") || "";
     const origin = request.headers.get("Origin") || "";
+    const accept = request.headers.get("Accept") || "";
+    const isWs = request.headers.get("Upgrade") === "websocket";
+    const isNavigation = !isWs && request.method === "GET" && accept.includes("text/html");
+
+    const originFrom = (v) => { try { return new URL(v).origin; } catch { return "" } };
+    const refOrigin = originFrom(referer);
+    const reqOrigin = originFrom(origin);
+    const fromExternal = allowedOrigins.includes(refOrigin) || allowedOrigins.includes(reqOrigin);
+    const fromSelf = (refOrigin === selfOrigin) || (reqOrigin === selfOrigin);
+
     let isAllowed = false;
-    const tryMatch = (v) => {
-      try { return new URL(v).origin === allowedOrigin; } catch { return false }
-    };
     const bypass = env.ALLOW_DEV && String(env.ALLOW_DEV).toLowerCase() === "true";
-    isAllowed = bypass || tryMatch(referer) || tryMatch(origin);
+    if (bypass) {
+      isAllowed = true;
+    } else if (isNavigation) {
+      // Only allow top-level navigations when coming from allowed external sites
+      isAllowed = fromExternal;
+    } else {
+      // Allow assets/WS from our own origin and also permit external referrers
+      isAllowed = fromExternal || fromSelf;
+    }
 
     // Block all traffic unless referred by allowedOrigin
-    const isWs = request.headers.get("Upgrade") === "websocket";
     if (!isAllowed) {
       if (isWs) {
         return new Response("Forbidden", { status: 403 });
       }
-      return Response.redirect(allowedOrigin, 302);
+      return Response.redirect(primaryRedirect, 302);
     }
 
     if (url.pathname === "/ws") {

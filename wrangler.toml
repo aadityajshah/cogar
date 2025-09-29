@@ -23,4 +23,4 @@ directory = "public"
 [vars]
 # Rotate this to change fallback anonymous usernames every 72h bucket
 USERNAME_SALT = "thisIsaTemporarySALT"
-#ALLOW_DEV = "true"
+ALLOW_DEV = "false"
