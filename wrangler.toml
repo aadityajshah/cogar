@@ -1,4 +1,4 @@
-name = "ephemeral-chat"
+name = "cogar"
 main = "src/worker.js"
 compatibility_date = "2024-06-20"
 workers_dev = true
@@ -22,5 +22,5 @@ directory = "public"
 
 [vars]
 # Rotate this to change fallback anonymous usernames every 72h bucket
-USERNAME_SALT = "change-me"
+USERNAME_SALT = "thisIsaTemporarySALT"
 #ALLOW_DEV = "true"
