@@ -1,7 +1,13 @@
 {
-  "name": "edge-chat-demo",
-  "description": "An edge chat service that runs on Cloudflare Workers using Durable Objects",
-  "version": "1.0.0",
-  "module": "./src/chat.mjs",
-  "private": true
+  "name": "ephemeral-chat",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^3.74.0"
+  }
 }

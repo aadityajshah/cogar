@@ -1,20 +1,26 @@
-name = "edge-chat-demo"
-compatibility_date = "2024-01-01"
-
-main = "src/chat.mjs"
+name = "ephemeral-chat"
+main = "src/worker.js"
+compatibility_date = "2024-06-20"
+workers_dev = true
 
 [durable_objects]
 bindings = [
-  { name = "rooms", class_name = "ChatRoom" },
-  { name = "limiters", class_name = "RateLimiter" },
+  { name = "CHAT_ROOM", class_name = "ChatRoom" }
 ]
 
-[[rules]]
-type = "Data"
-globs = ["**/*.html"]
-fallthrough = false
-
-# Indicate that you want the ChatRoom and RateLimiter classes to be callable as Durable Objects.
 [[migrations]]
-tag = "v1"                                       # Should be unique for each entry
-new_sqlite_classes = ["ChatRoom", "RateLimiter"]
+ tag = "v1"
+ new_classes = ["ChatRoom"]
+
+[[kv_namespaces]]
+binding = "CHAT_KV"
+id = "2af1dbd7b5fd4490ab5f9b86a1129ae1"
+
+[assets]
+binding = "ASSETS"
+directory = "public"
+
+[vars]
+# Rotate this to change fallback anonymous usernames every 72h bucket
+USERNAME_SALT = "change-me"
+#ALLOW_DEV = "true"

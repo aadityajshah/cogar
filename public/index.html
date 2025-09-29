@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>cogar</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: 'Courier New', Courier, monospace; margin: 0; display: grid; grid-template-rows: 1fr auto; height: 100vh; }
+    #log { padding: 12px; overflow-y: auto; }
+    #composer { display: flex; gap: 8px; padding: 10px; border-top: 1px solid #ccc; }
+    #input { flex: 1; padding: 10px; font-size: 18px; background: transparent; color: #EBD6FB; caret-color: #EBD6FB; caret-shape: block; border:none; outline: none;}
+    #input::selection { background: rgba(120,81,169,0.35);caret-shape: block; caret-color: #7851A9; }
+    button { padding: 10px 14px; font-size: 16px; }
+    .sys { opacity: 0.7; font-style: italic; color: #EBD6FB; }
+    .msg { margin: 6px 0; }
+    .name { font-weight: 600; margin-right: 6px; }
+    .name.own { color: #FFFFFF; }
+    .name.other { color: #7851A9; }
+    .text { color: #EBD6FB; }
+    .ts { opacity: 0.6; font-size: 12px; margin-left: 6px; color: #EBD6FB; }
+    #input:focus { caret-shape: block; caret-color: #7851A9; }
+  </style>
+</head>
+<body>
+  <div id="log"></div>
+  <form id="composer">
+    <input id="input" type="text" placeholder="Type a message and press Enter…" autocomplete="off" />
+    <button type="submit">Send</button>
+  </form>
+  <script src="/main.js" type="module"></script>
+</body>
+</html>
