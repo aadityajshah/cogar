@@ -6,7 +6,11 @@
   <title>cogar</title>
   <style>
     :root { color-scheme: light dark; }
-    body { font-family: 'Courier New', Courier, monospace; margin: 0; display: grid; grid-template-rows: 1fr auto; height: 100vh; }
+    @font-face {
+      font-family: IBM-Bios;
+      src: url(WebPlus_IBM_BIOS.woff);
+    }
+    body { font-family: IBM-Bios, 'Courier New', monospace; margin: 0; display: grid; grid-template-rows: 1fr auto; height: 100vh; }
     #log { padding: 12px; overflow-y: auto; }
     #composer { display: flex; gap: 8px; padding: 10px; border-top: 1px solid #ccc; }
     #input { flex: 1; padding: 10px; font-size: 18px; background: transparent; color: #EBD6FB; caret-color: #EBD6FB; caret-shape: block; border:none; outline: none;}
