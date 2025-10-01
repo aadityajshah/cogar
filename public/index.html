@@ -6,26 +6,30 @@
   <link rel="icon" type="image/x-icon" href="favicon.png" >
   <title>cogar</title>
   <style>
-    :root { color-scheme: light dark; }
-    @font-face {
-      font-family: IBM-Bios;
-      src: url(Web437_IBM_EGA_8x14.woff);
-    }
-    body { font-family: IBM-Bios, 'Courier New', monospace; margin: 0; display: grid; grid-template-rows: 1fr auto; height: 100vh; }
+@import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
+</style>
+  <style>
+   :root { color-scheme: light dark; }
+.jersey-25-regular {
+  font-family: "Jersey 25", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+    body { font-family: 'Jersey 25', 'Courier New', monospace; margin: 0; display: grid; grid-template-rows: 1fr auto; height: 100vh; background-color: #000; }
     #log { padding: 12px; overflow-y: auto; }
     #composer { display: flex; gap: 8px; padding: 10px; border-top: 1px solid #ccc; }
-    #input { font-family: IBM-Bios, 'Courier New', monospace; flex: 1; padding: 10px; font-size: 18px; background: transparent; color: #EBD6FB; caret-color: #EBD6FB; caret-shape: block; border:none; outline: none;}
-    #input::selection { background: rgba(120,81,169,0.35);caret-shape: block; caret-color: #7851A9; }
+    #input { font-family: 'Jersey 25', 'Courier New', monospace; flex: 1; padding: 10px; font-size: 18px; background: transparent; color: #fff; caret-color: #403d70; caret-shape: block; border:none; outline: none;}
+    #input::selection { background: rgba(120,81,169,0.35);caret-shape: block; caret-color: #403d70; }
     button { padding: 10px 14px; font-size: 16px; }
-    .sys { opacity: 0.7; font-style: italic; color: #EBD6FB; }
+    .sys { opacity: 0.7; font-style: italic; color: #6fccd1;}
     .msg { margin: 6px 0;font-weight:normal;  }
-    .msg.own {color:#7851A9;}
-    .msg.other {color:#EBD6FB;}
+    .msg.own {color:#571dc2;}
+    .msg.other {color:#fff;}
     .name { font-weight: bold; margin-right: 6px; }
-    .name.own { color: #FFFFFF; }
-    .name.other { color: #7851A9; }
-    .text { font-weight:normal; color: #EBD6FB; }
-    .ts { opacity: 0.6; font-size: 12px; margin-left: 6px; color: #EBD6FB; }
+    .name.own { color: #c86ad4; }
+    .name.other { color: #6985d7; }
+    .text { font-weight:normal; color: #fff; }
+    .ts { opacity: 0.6; font-size: 12px; margin-left: 6px; color: #80d468; padding-right:5px; }
     #input:focus { caret-shape: block; caret-color: #7851A9; }
   </style>
 </head>

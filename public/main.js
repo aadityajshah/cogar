@@ -35,7 +35,7 @@ ws.onmessage = (ev) => {
       } else if (kind === 'chat') {
         const mine = myName && username === myName;
         const nameClass = mine ? 'own' : 'other';
-        addLine(`<span class="name ${nameClass}">${username}</span> <span class="text ${nameClass}">${text}</span> <span class="ts">${fmtTs(ts)}</span>`);
+        addLine(`<span class="name ${nameClass}"><span class="ts">${fmtTs(ts)}</span>${username}</span> <span class="text ${nameClass}">${text}</span>`);
       }
     }
   } catch {}
