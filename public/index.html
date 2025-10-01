@@ -9,22 +9,22 @@
     :root { color-scheme: light dark; }
     @font-face {
       font-family: IBM-Bios;
-      src: url(Web437_IBM_EGA_8x14.woff);
+      src: url(Web437_Cordata_PPC-400.woff);
     }
     body { font-family: IBM-Bios, 'Courier New', monospace; margin: 0; display: grid; grid-template-rows: 1fr auto; height: 100vh; }
     #log { padding: 12px; overflow-y: auto; }
     #composer { display: flex; gap: 8px; padding: 10px; border-top: 1px solid #ccc; }
-    #input { font-family: IBM-Bios, 'Courier New', monospace; flex: 1; padding: 10px; font-size: 18px; background: transparent; color: #EBD6FB; caret-color: #EBD6FB; caret-shape: block; border:none; outline: none;}
+    #input { font-family: IBM-Bios, 'Courier New', monospace; flex: 1; padding: 10px; font-size: 18px; background: transparent; color: #F3F8FF; caret-color: #EBD6FB; caret-shape: block; border:none; outline: none;}
     #input::selection { background: rgba(120,81,169,0.35);caret-shape: block; caret-color: #7851A9; }
     button { padding: 10px 14px; font-size: 16px; }
-    .sys { opacity: 0.7; font-style: italic; color: #EBD6FB; }
+    .sys { opacity: 0.7; font-style: italic; color: #48b685; }
     .msg { margin: 6px 0;font-weight:normal;  }
     .msg.own {color:#7851A9;}
     .msg.other {color:#EBD6FB;}
     .name { font-weight: bold; margin-right: 6px; }
-    .name.own { color: #FFFFFF; }
-    .name.other { color: #7851A9; }
-    .text { font-weight:normal; color: #EBD6FB; }
+    .name.own { color: #815ba4; float:right; }
+    .name.other { color: #06b6ef; }
+    .text { font-weight:normal; color: #e7e9db; }
     .ts { opacity: 0.6; font-size: 12px; margin-left: 6px; color: #EBD6FB; }
     #input:focus { caret-shape: block; caret-color: #7851A9; }
   </style>
