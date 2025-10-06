@@ -18,7 +18,7 @@ function fmtTs(ts){
 const proto = location.protocol === 'https:' ? 'wss' : 'ws';
 const ws = new WebSocket(proto + '://' + location.host + '/ws');
 
-ws.onopen = () => addLine('<div class="sys">Connected. Your messages will self destruct in 72 hours. </div>');
+ws.onopen = () => addLine('<div class="sys">Connected. Your messages will self destruct in 72 hours. </div> <br/> <div> Do you choose the 🔴 or the 🔵? </div>');
 ws.onclose = () => addLine('<div class="sys">Disconnected.</div>');
 
 ws.onmessage = (ev) => {
