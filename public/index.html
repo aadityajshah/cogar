@@ -5,20 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/x-icon" href="favicon.png" >
   <title>cogar</title>
+  <link href="https://db.onlinewebfonts.com/c/473ea72ae3331ae38d649a08d10096c8?family=Terminal+Grotesque" rel="stylesheet">
   <style>
-@import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
-</style>
+@import url(https://db.onlinewebfonts.com/c/473ea72ae3331ae38d649a08d10096c8?family=Terminal+Grotesque);
+
+@font-face {
+    font-family: "Terminal Grotesque";
+    src: url("https://db.onlinewebfonts.com/t/473ea72ae3331ae38d649a08d10096c8.eot");
+    src: url("https://db.onlinewebfonts.com/t/473ea72ae3331ae38d649a08d10096c8.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/473ea72ae3331ae38d649a08d10096c8.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/473ea72ae3331ae38d649a08d10096c8.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/473ea72ae3331ae38d649a08d10096c8.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/473ea72ae3331ae38d649a08d10096c8.svg#Terminal Grotesque")format("svg");
+}
+  </style>
   <style>
    :root { color-scheme: light dark; }
-.jersey-25-regular {
-  font-family: "Jersey 25", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-    body { font-family: 'Jersey 25', 'Courier New', monospace; margin: 0; display: grid; grid-template-rows: 1fr auto; height: 100vh; background-color: #000; }
+
+    body { font-family: "Terminal Grotesque", 'Courier New', monospace; margin: 0; display: grid; grid-template-rows: 1fr auto; height: 100vh; background-color: #000; }
     #log { padding: 12px; overflow-y: auto; }
     #composer { display: flex; gap: 8px; padding: 10px; border-top: 1px solid #ccc; }
-    #input { font-family: 'Jersey 25', 'Courier New', monospace; flex: 1; padding: 10px; font-size: 18px; background: transparent; color: #fff; caret-color: #403d70; caret-shape: block; border:none; outline: none;}
+    #input { font-family: "Terminal Grotesque", 'Courier New', monospace; flex: 1; padding: 10px; font-size: 18px; background: transparent; color: #fff; caret-color: #403d70; caret-shape: block; border:none; outline: none;}
     #input::selection { background: rgba(120,81,169,0.35);caret-shape: block; caret-color: #403d70; }
     button { padding: 10px 14px; font-size: 16px; }
     .sys { opacity: 0.7; font-style: italic; color: #6fccd1;}
